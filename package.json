@@ -1,0 +1,14 @@
+{
+  "name": "ethernaut-exercises",
+  "version": "1.0.0",
+  "description": "Ethernaut Exercises for Practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tashun Sandaru Chamara",
+  "license": "MIT",
+  "devDependencies": {
+    "hardhat": "^2.11.1"
+  }
+}
