@@ -21,7 +21,7 @@ contract ConcreteBuilding is Building {
         elevator = importingElevator;
     }
 
-
+// can be use this as this is not a view function
     function isLastFloor(uint) public override returns (bool) {
         count ++;
         if (count % 2 == 0) {
