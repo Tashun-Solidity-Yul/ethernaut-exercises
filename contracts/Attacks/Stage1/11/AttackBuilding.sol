@@ -3,7 +3,7 @@ pragma solidity ^0.6.0;
 
 import "../../../Exercise/Stage1/11/Elevator.sol";
 
-contract ConcreteBuilding is Building {
+contract AttackBuilding is Building {
     //    safe math
     address private userAddress;
     Elevator elevator;

@@ -9,7 +9,7 @@ contract AttackToken {
         token = tokenAddress;
     }
 
-    function attack(address newOwner) external {
-        token.transfer(newOwner ,20);
+    function attack(address newOwner, uint256 tokenCount) external {
+        token.transfer(newOwner, tokenCount * 10 ** 18);
     }
 }
