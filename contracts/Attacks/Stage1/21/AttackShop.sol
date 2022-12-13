@@ -4,7 +4,7 @@ pragma solidity ^0.6.0;
 import "../../../Exercise/Stage1/21/Shop.sol";
 import "hardhat/console.sol";
 
-contract FakeBuyer is Buyer {
+contract AttackBuyer is Buyer {
     //    safe math
     address private userAddress;
     Shop shop;
@@ -15,7 +15,7 @@ contract FakeBuyer is Buyer {
         userAddress = inputUserAddress;
     }
 
-    function attack(uint fakeAmount) public {
+    function attack() public {
         shop.buy();
     }
 

