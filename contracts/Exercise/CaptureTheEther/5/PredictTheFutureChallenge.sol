@@ -1,0 +1,64 @@
+pragma solidity ^0.4.21;
+
+
+contract PredictTheFutureChallenge {
+    address guesser;
+    uint8 guess;
+    uint256 settlementBlockNumber;
+
+    function PredictTheFutureChallenge() public payable {
+        require(msg.value == 1 ether);
+    }
+
+    function isComplete() public view returns (bool) {
+        return address(this).balance == 0;
+    }
+
+    function lockInGuess(uint8 n) public payable {
+        require(guesser == 0);
+        require(msg.value == 1 ether);
+
+        guesser = msg.sender;
+        guess = n;
+        settlementBlockNumber = block.number + 1;
+    }
+
+    function settle() public {
+        require(msg.sender == guesser);
+        require(block.number > settlementBlockNumber);
+        uint8 answer = uint8(keccak256(block.blockhash(block.number - 1), now)) % 10;
+        guesser = 0;
+        if (guess == answer) {
+            msg.sender.transfer(2 ether);
+        }
+    }
+
+        function uint2str(
+            uint256 _i
+        )
+        internal
+        pure
+        returns (string memory str)
+        {
+            if (_i == 0)
+            {
+                return "0";
+            }
+            uint256 j = _i;
+            uint256 length;
+            while (j != 0)
+            {
+                length++;
+                j /= 10;
+            }
+            bytes memory bstr = new bytes(length);
+            uint256 k = length;
+            j = _i;
+            while (j != 0)
+            {
+                bstr[--k] = bytes1(uint8(48 + j % 10));
+                j /= 10;
+            }
+            str = string(bstr);
+        }
+}
