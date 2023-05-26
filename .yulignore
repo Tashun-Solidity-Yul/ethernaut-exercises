@@ -11,3 +11,9 @@ artifacts
 .env
 .idea
 .vscode
+
+out
+scripts
+src
+test
+.git

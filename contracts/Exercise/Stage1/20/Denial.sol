@@ -2,6 +2,7 @@
 pragma solidity ^0.6.0;
 
 import '@openzeppelin/contracts/math/SafeMath.sol';
+import "hardhat/console.sol";
 
 contract Denial {
 
