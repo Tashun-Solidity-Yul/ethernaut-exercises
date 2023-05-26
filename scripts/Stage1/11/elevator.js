@@ -10,7 +10,7 @@ async function main() {
 
 
     console.log(elevatorContract.address)
-    const attackContractFactory = await hre.ethers.getContractFactory('ConcreteBuilding');
+    const attackContractFactory = await hre.ethers.getContractFactory('AttackBuilding');
     const attackElevatorContract = await attackContractFactory.connect(accounts[2]).deploy(accounts[2].address);
 
 

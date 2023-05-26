@@ -1,0 +1,17 @@
+// Ethernaut 1 - Fallback ()
+// Ethernaut 2 - Fallout ()
+// Ethernaut 3 - Coin Flip ()
+// Ethernaut 4 - Telephone ()
+// Ethernaut 5 - Token ()
+// Ethernaut 10 - ReRntrancy ()
+// Ethernaut 11 - Elevator ()
+// Ethernaut 15 - Naught Coin ()
+// Ethernaut 17 Recovery ()
+// Ethernaut 20 Denial ()
+// Ethernaut 21 Shop ()
+
+(bool result, ) = addr.call("");
+(bool result, bytes memory result) = addr.call("");
+Jeffrey Scholz8:58 PM
+otherContract.foo();
+require(result);
